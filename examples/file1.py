@@ -1,13 +1,31 @@
-def file1(num):
-    """
-    >>> file1(5)
+def test1(num):
+    """ start of docstring
+    >>> test1(5)
     'five'
-    >>> file1(33)
+    >>> test1(33)
     'thirty-three'
-    >>> file1(99)
+    >>> test1(99)
     'ninety-nine'
-    >>> file1(0)
+    >>> test1(0)
     'zero'
+    >>> test1(15)
+    'fifteen'
+    >>> test1(45)
+    'fourty-five'
+    >>> test1(16)
+    'sixteen'
+    >>> test1(45)
+    'fourty-five'
+    >>> test1(16)
+    'sixteen'
+    >>> test1(45)
+    'fourty-five'
+    >>> test1(16)
+    'sixteen'
+    >>> test1(45)
+    'fourty-five'
+    >>> test1(16)
+    'sixteen'
     """
     nums = {0: 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five',
             6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}
@@ -20,25 +38,25 @@ def file1(num):
         return 'zero'
     numlist = []
     numstr = ''
-    while num >= 10:
-        num = num // 10
-        numlist.append(num)
-    if num > 0:
-        numlist.append(num)
+    b = str(num)
+    for digit in b:
+        numlist.append(int(digit))
     for i in range(len(numlist)):
-        if not num % 10:
-            numstr += tens[numlist[i]]
+        if len(numlist) == 1:
+            numstr = nums[numlist[i]]
             break
-        elif num > 10 and num < 20:
-            numstr += teens[numlist[i]]
+        elif numlist[1] == 0:
+            numstr = tens[numlist[0]]
+            break
+        elif len(numlist) == 2 and numlist[0] == 1 and numlist[1] > 0:
+            numstr = teens[num]
             break
         else:
-            if i + 1 < len(numlist):
-                numstr += tens[numlist[i]] + '-'
-            else:
-                numstr += nums[numlist[i]]
+            numstr = tens[numlist[0]] + '-'
+            numstr += nums[numlist[1]]
 
     return numstr
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
