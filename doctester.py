@@ -3,6 +3,7 @@ import os
 
 paths = [['examples/file1.py', {16: 'sixteen', 45: 'fourty-five'}, 'test1'],
         ['examples/file2.py', {3: '9', 15: '45'}, 'test2']]
+# paths [['path', {input: output}, 'function name']]
 
 def add_tests(paths):
     for i in range(len(paths)):
