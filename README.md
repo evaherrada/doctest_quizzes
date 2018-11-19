@@ -1,7 +1,19 @@
 # Doctest Quizzes
 
-### Possible future features:
+## Functions
+### test
+#### Parameters
+* paths
+  * Formatting
+    * `[['path/to/file', {doctest in: doctest out}, 'Function Name']]`
+* student_id
+  * Formatting
+    * Any string or integer
+### add_tests
+Helper function for test function. Same variable formatting as test.
+
+
+## Possible future features:
 * quiz items
 * quizzes
-* students
 * scores
