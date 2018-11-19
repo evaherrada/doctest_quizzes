@@ -1,0 +1,69 @@
+Trying:
+    test1(5)
+Expecting:
+    'five'
+ok
+Trying:
+    test1(33)
+Expecting:
+    'thirty-three'
+ok
+Trying:
+    test1(99)
+Expecting:
+    'ninety-nine'
+ok
+Trying:
+    test1(0)
+Expecting:
+    'zero'
+ok
+Trying:
+    test1(15)
+Expecting:
+    'fifteen'
+ok
+Trying:
+    test1(45)
+Expecting:
+    'fourty-five'
+ok
+Trying:
+    test1(16)
+Expecting:
+    'sixteen'
+ok
+1 items had no tests:
+    file1
+1 items passed all tests:
+   7 tests in file1.test1
+7 tests in 2 items.
+7 passed and 0 failed.
+Test passed.
+Trying:
+    test2(10)
+Expecting:
+    '30'
+ok
+Trying:
+    test2(2)
+Expecting:
+    '6'
+ok
+Trying:
+    test2(15)
+Expecting:
+    '45'
+ok
+Trying:
+    test2(3)
+Expecting:
+    '9'
+ok
+1 items had no tests:
+    file2
+1 items passed all tests:
+   4 tests in file2.test2
+4 tests in 2 items.
+4 passed and 0 failed.
+Test passed.
