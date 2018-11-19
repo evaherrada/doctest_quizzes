@@ -8,7 +8,7 @@
     * `[['path/to/file', {doctest in: doctest out}, 'Function Name']]`
 * student_id
   * Formatting
-    * Any string or integer
+    * Any string, integer, or float
 ### add_tests
 Helper function for test function. Same variable formatting as test.
 
