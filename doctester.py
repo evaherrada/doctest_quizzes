@@ -31,7 +31,41 @@ def add_tests(paths):
 def test(paths, student_id):
     add_tests(paths)
     for i in range(len(paths)):
-        os.system('python3 -m doctest -v {0} >> {1}_{2}.txt'.format(paths[i][0],
-            str(student_id), datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")))
+        filename = '{0}_{1}.txt'.format(str(student_id),
+                datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))
+        os.system('python3 -m doctest -v {0} >> {1}'.format(paths[i][0],
+                    filename))
+        score_evaluator(score_calculator(filename))
 
-test(paths, student_id)
+def score_compiler(filename):
+    f = open(filename, "r+")
+    a = [x.rstrip() for x in f]
+    a = [x.strip(' ') for x in a]
+    trying = []
+    expecting = []
+    got = []
+    for i in range(len(a)):
+        if a[i] == 'Trying:':
+            trying.append(a[i+1])
+            continue
+        elif a[i] == 'Expecting:':
+            expecting.append(a[i+1])
+        if a[i] == 'Got:':
+            got.append(a[i+1])
+            continue
+        elif a[i] == 'Expecting:' and '*' not in a[i+2]:
+            got.append(a[i+1])
+    master = []
+    for i in range(len(trying)):
+        b = []
+        b.append(trying[i])
+        b.append(expecting[i])
+        b.append(got[i])
+        master.append(b)
+    return master
+
+score_evaluator(master_list):
+
+# score_compiler('982521_2018-11-19_18-31-06.txt')
+
+# test(paths, student_id)
