@@ -32,6 +32,6 @@ def test(paths, student_id):
     add_tests(paths)
     for i in range(len(paths)):
         os.system('python3 -m doctest -v {0} >> {1}_{2}.txt'.format(paths[i][0],
-            student_id, datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")))
+            str(student_id), datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")))
 
 test(paths, student_id)
