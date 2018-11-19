@@ -1,4 +1,4 @@
-# doctest_quizzes
+# Doctest Quizzes
 
 ### Possible future features:
 * quiz items
