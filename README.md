@@ -6,7 +6,7 @@
 * paths
   * Formatting
     * `[['path/to/file', {doctest in: doctest out}, 'Function Name']]`
-    * doctest in can be a string, integer, float or list (must be formatted as a tuple)
+    * doctest in can be a string, integer, float, or list (list must be formatted as a string Eg. '[1, 2]')
     * doctest out can be a string, int, or list
 * student_id
   * Formatting
