@@ -3,7 +3,7 @@ import datetime
 
 paths = [['examples/file1.py', {16: 'sixteen', 45: 'fourty-five'}, 'test1'],
          ['examples/file2.py', {3: '9', 15: '45'}, 'test2'],
-         ['examples/file3.py', {(2, 4): [3, 6]}, 'test3'],
+         ['examples/file3.py', {'[2, 4]': [3, 6]}, 'test3'],
          ['examples/file4.py', {'15': 15, '33': 33}, 'test4']]
 # Lists in the key slot of the dict MUST be defined as tuples
 # paths [['path', {input: output}, 'function name', 'student name']]
@@ -23,6 +23,9 @@ def add_tests(paths, student_id):
                     for k in paths[i][1]:
                         outtype = type(paths[i][1][k])
                         intype = type(k)
+                        if type(k) == str:
+                            l = eval(k)
+                            intype = type(l)
                         if outtype == str:
                             docout = "    '{0}'\n".format(paths[i][1][k])
                         else:
@@ -31,9 +34,8 @@ def add_tests(paths, student_id):
                         if intype == str:
                             docin = "    >>> {0}('{1}')\n".format(paths[i][2],
                                                                   k)
-                        elif intype == tuple:
-                            docin = "    >>> {0}({1})\n".format(paths[i][2],
-                                                                list(k))
+                        elif intype == list:
+                            docin = "    >>> {0}({1})\n".format(paths[i][2], l)
                         else:
                             docin = "    >>> {0}({1})\n".format(paths[i][2], k)
 
