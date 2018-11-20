@@ -1,4 +1,4 @@
-# Doctest Quizzes
+# Doctest Quiz
 
 ## Functions
 ### test
