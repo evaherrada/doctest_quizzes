@@ -1,4 +1,3 @@
-import doctest
 import os
 import datetime
 
@@ -8,6 +7,7 @@ paths = [['examples/file1.py', {16: 'sixteen', 45: 'fourty-five'}, 'test1'],
          ['examples/file4.py', {'15': 15, '33': 33}, 'test4']]
 # Lists in the key slot of the dict MUST be defined as tuples
 # paths [['path', {input: output}, 'function name', 'student name']]
+# add defining dict keys as strings
 student_id = '982521'
 # Get type of docout
 # use type when writing
