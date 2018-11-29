@@ -2,8 +2,6 @@ def test3(nums):
     """ start of docstring 
     >>> test3([1, 2, 3])
     [2, 6]
-    >>> test3([2, 4])
-    [3, 6]
     """
     a = []
     avg = 0
