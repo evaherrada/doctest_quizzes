@@ -1,16 +1,28 @@
 # Opens file. File get's printed. ___ gets treated as input field. input gets written to file at specific location. code gets tested.
+from doctester import tester
 
-QuestionF = open('question.py', 'r')
-AnswerF = open('question1.py', 'w')
+paths = [['question1', {-2: -1, 15: 16}, 'addone'], 
+        ['question2', {3: 2, -15: -16}, 'subtractone']]
 
-QStr = QuestionF.read()
-QList = QStr.split('___')
-print(QList[0], end = "")
-answer = input()
-print(QList[1])
+def runner(paths):
+    filename, extra_tests, function_name = paths
+    QuestionF = open(filename+'.py', 'r')
+    AnswerF = open(filename+'_answer.py', 'w')
 
-AStr = QList[0] + answer + QList[1]
-AnswerF.write(AStr)
+    QStr = QuestionF.read()
+    QList = QStr.split('___')
+    print(QList[0], end = "")
+    answer = input()
+    print(QList[1])
 
-QuestionF.close()
-AnswerF.close()
+    AStr = QList[0] + answer + QList[1]
+    AnswerF.write(AStr)
+
+    QuestionF.close()
+    AnswerF.close()
+
+    tests = tester([filename+'_answer', extra_tests, function_name])
+    tests.test()
+
+for path in paths:
+    runner(path)

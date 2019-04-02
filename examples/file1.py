@@ -1,5 +1,5 @@
 def test1(num):
-    """ start of docstring
+    """
     >>> test1(5)
     'five'
     >>> test1(33)
@@ -40,7 +40,3 @@ def test1(num):
             numstr += nums[numlist[1]]
 
     return numstr
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
