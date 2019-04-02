@@ -16,3 +16,5 @@
 * quiz items
 * quizzes
 * scores
+
+* Later: hash items
