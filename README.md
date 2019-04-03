@@ -13,8 +13,6 @@
     * Any string, integer, or float
 
 ## Possible future features:
-* quiz items
-* quizzes
 * scores
 
 * Later: hash items
