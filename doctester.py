@@ -1,10 +1,3 @@
-# import doctest
-# import importlib
-
-paths = [['examples.file1', {16: 'sixteen', 45: 'fourty-five'}, 'test1'],
-         ['examples.file2', {3: '9', 15: '45'}, 'test2']]
-
-
 class tester:
     def __init__(self, everything):
         self.filename, self.extra_tests, self.function_name = everything
@@ -32,9 +25,3 @@ class tester:
             else:
                 new_tests += "\t{}\n".format(self.extra_tests[keys])
         return new_tests
-
-
-if __name__ == '__main__':
-    for path in paths:
-        p1 = tester(path)
-        p1.test()
