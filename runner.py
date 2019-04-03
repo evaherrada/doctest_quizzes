@@ -1,11 +1,6 @@
 # Opens file. File get's printed. ___ gets treated as input field.
 # Input gets written to file at specific location. code gets tested.
 
-#from doctester import tester
-
-quiz = 'quiz1'
-paths = [['question1', {-2: -1, 15: 16}, 'addone'],
-         ['question2', {3: 2, -15: -16}, 'subtractone']]
 
 class runner:
     def __init__(self, quiz):
@@ -30,9 +25,14 @@ class runner:
         QuestionF.close()
         AnswerF.close()
 
-        tests = self.tester.tester(['answers.'+self.quiz+'.'+filename+'_answer', extra_tests, function_name])
+        tests = self.tester.tester(['answers.'+self.quiz+'.'+filename +
+                                    '_answer', extra_tests, function_name])
         tests.test()
 
+
+quiz = 'quiz1'
+paths = [['question1', {-2: -1, 15: 16}, 'addone'],
+         ['question2', {3: 2, -15: -16}, 'subtractone']]
 
 run = runner(quiz)
 for path in paths:
