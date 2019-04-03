@@ -14,8 +14,8 @@ def runner(paths):
 
     QStr = QuestionF.read()
     QList = QStr.split('___')
-    print(QList[0], end="")
-    answer = input()
+    print(str(QList[0])[:-4], end="")
+    answer = input('\t')
     print(QList[1])
 
     AStr = QList[0] + answer + QList[1]
