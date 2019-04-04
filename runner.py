@@ -9,6 +9,7 @@ class runner:
         self.tester = self.importlib.import_module('doctester')
 
     def run(self, paths):
+        input("Press enter to start/continue")
         filename, extra_tests, function_name = paths
         QuestionF = open('quizzes/'+self.quiz+'/'+filename+'.py', 'r')
         AnswerF = open('answers/'+self.quiz+'/'+filename+'_answer.py', 'w')
