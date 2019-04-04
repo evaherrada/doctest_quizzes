@@ -16,11 +16,16 @@ class runner:
         QStr = QuestionF.read()
         QList = QStr.split('___')
         print(str(QList[0])[:-4], end="")
-        answer = input('    ')
-        print(QList[1])
-
-        AStr = QList[0] + answer + QList[1]
-        AnswerF.write(AStr)
+        
+        while True:
+            try:
+                answer = input('    ')
+            
+                QList[0] = QList[0] + answer
+                AnswerF.write(QList[0])
+        
+            except EOFError:
+                break
 
         QuestionF.close()
         AnswerF.close()
