@@ -17,12 +17,13 @@ class runner:
         QList = QStr.split('___')
         print(str(QList[0])[:-4], end="")
         
+        AnswerF.write(QList[0][:-4])
+
         while True:
             try:
                 answer = input('    ')
             
-                QList[0] = QList[0] + answer
-                AnswerF.write(QList[0])
+                AnswerF.write('    ' + answer + '\n')
         
             except EOFError:
                 break
