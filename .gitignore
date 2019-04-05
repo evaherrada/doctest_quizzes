@@ -2,3 +2,4 @@ __pycache__
 answers/*.py
 *.swp
 *.pyc
+notes.txt
