@@ -1,11 +1,11 @@
 # Doctest Quiz
 
 ## Instructions for taking quiz
-`git clone git@github.com:dherrada/doctest_quizzes.git`
+`$ git clone git@github.com:dherrada/doctest_quizzes.git`
 
 `$ cd doctest_quizzes`
 
-`python3 doctester.py`
+`$ python3 doctester.py`
 
 ## Functions
 ### test
