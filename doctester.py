@@ -2,6 +2,7 @@ import doctest
 import importlib
 import ast
 
+
 class tester:
     def __init__(self, everything):
         self.filename, self.extra_tests, self.function_name = everything
