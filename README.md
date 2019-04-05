@@ -1,6 +1,12 @@
 # Doctest Quiz
 
-Note: this readme really needs to be updated but doing that's boring so I haven't done that. The syntax is the same in runner.py and doctester.py
+## Instructions for taking quiz
+`git clone git@github.com:dherrada/doctest_quizzes.git`
+
+`$ cd doctest_quizzes`
+
+`python3 doctester.py`
+
 ## Functions
 ### test
 #### Parameters
