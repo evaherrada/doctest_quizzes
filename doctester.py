@@ -1,6 +1,6 @@
 import doctest
 import importlib
-
+import ast
 
 class tester:
     def __init__(self, everything):
@@ -21,11 +21,18 @@ class tester:
     def format_tests(self):
         new_tests = ''
         for keys in self.extra_tests:
-            new_tests += '\t>>> {0}({1})\n'.format(self.function_name, keys)
-            if type(self.extra_tests[keys]) == str:
-                new_tests += "\t'{}'\n".format(self.extra_tests[keys])
+            keysk = keys
+            if keys[0] == '[':
+                keysk = ast.literal_eval(keys)
+
+            keysv = self.extra_tests[keys]
+            if self.extra_tests[keys][0] == '[':
+                keysv = ast.literal_eval(self.extra_tests[keys])
+            new_tests += '\t>>> {0}({1})\n'.format(self.function_name, keysk)
+            if type(keysv) == str:
+                new_tests += "\t'{}'\n".format(keysv)
             else:
-                new_tests += "\t{}\n".format(self.extra_tests[keys])
+                new_tests += "\t{}\n".format(keysv)
         return new_tests
 
 
@@ -62,9 +69,8 @@ class runner:
         tests.test()
 
 
-quiz = 'quiz1'
-paths = [['question1', {-2: -1, 15: 16}, 'addone'],
-         ['question2', {3: 2, -15: -16}, 'subtractone']]
+quiz = 'quiz2'
+paths = [['question1', {'[15, 16, 17, 18]': '[16, 18]'}, 'only_evens']]
 
 run = runner(quiz)
 for path in paths:
