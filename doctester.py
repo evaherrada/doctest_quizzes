@@ -1,6 +1,7 @@
 import doctest
 import importlib
 
+
 class tester:
     def __init__(self, everything):
         self.filename, self.extra_tests, self.function_name = everything
@@ -41,22 +42,22 @@ class runner:
         QStr = QuestionF.read()
         QList = QStr.split('___')
         print(str(QList[0])[:-4], end="")
-        
+
         AnswerF.write(QList[0][:-4])
 
         while True:
             try:
                 answer = input('    ')
-            
+
                 AnswerF.write('    ' + answer + '\n')
-        
+
             except EOFError:
                 break
 
         QuestionF.close()
         AnswerF.close()
 
-        tests = tester(['answers.'+self.quiz+'.'+filename + '_answer', 
+        tests = tester(['answers.'+self.quiz+'.'+filename + '_answer',
                         extra_tests, function_name])
         tests.test()
 
