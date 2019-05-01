@@ -31,7 +31,7 @@ class tester:
             keysv = self.extra_tests[keys]
             if str(self.extra_tests[keys])[0] == '[':
                 keysv = ast.literal_eval(self.extra_tests[keys])
-            
+
             if type(keysk) == str:
                 new_tests += "\t>>> {0}('{1}')\n".format(self.function_name,
                                                          keysk)
@@ -80,6 +80,7 @@ class runner:
                         extra_tests, function_name])
         tests.test()
 
+
 quiz = 'quiz1'
 paths = [['question1', {-2: -1, 15: 16, 1.5: 2.5}, 'addone'],
          ['question2', {3: 2, -15: -16, 2.5: 1.5}, 'subtractone'],
@@ -89,8 +90,8 @@ paths = [['question1', {-2: -1, 15: 16, 1.5: 2.5}, 'addone'],
           'hello']]
 
 
-#quiz = 'quiz2'
-#paths = [['question1', {'[15, 16, 17, 18]': '[16, 18]'}, 'only_evens']]
+# quiz = 'quiz2'
+# paths = [['question1', {'[15, 16, 17, 18]': '[16, 18]'}, 'only_evens']]
 
 run = runner(quiz)
 for path in paths:
