@@ -16,6 +16,5 @@
             * Should be a string
         * extra_tests
             * Key is the doctest in ('>>>' line in a normal doctest)
+                * If doctest in is a list, put the entire thing in quotes
             * Value is doctest out (line after '>>>' in a normal doctest)
-    * doctest in can be a string, integer, float, or list (list must be formatted as a string Eg. '[1, 2]')
-    * doctest out can be a string, int, or list
