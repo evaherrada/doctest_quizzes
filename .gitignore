@@ -3,3 +3,4 @@ answers/*.py
 *.swp
 *.pyc
 notes.txt
+test.py
