@@ -3,7 +3,7 @@
 #### Parameters
 * quiz
     * This parameter specifies the name of the folder that the quiz items are in.
-    * This is a relative path
+    * This is a relative path, and it should NOT include the folder 'quizzes'
     * Syntax
         * path.to.folder
 
