@@ -1,6 +1,5 @@
 # Doctest Quiz
 
-### test
 #### Parameters
 * quiz
     * This parameter specifies the name of the folder that the quiz items are in.
